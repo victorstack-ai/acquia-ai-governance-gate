@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "acquia-ai-governance-gate"
+version = "0.1.0"
+description = "Lightweight governance gate for AI-assisted content workflows."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8.0.0", "ruff>=0.6.0"]
+
+[project.scripts]
+acquia-governance-gate = "acquia_ai_governance_gate.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/acquia_ai_governance_gate"]

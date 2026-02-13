@@ -1,0 +1,6 @@
+#!/Users/victorcamilojimenezvargas/Projects/acquia-ai-governance-gate/.venv/bin/python
+import sys
+from acquia_ai_governance_gate.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
